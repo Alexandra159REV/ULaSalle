@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\NavigationController;
 
+Route::get('/', [NavigationController::class, 'login'])->name('login');
+
 // arial
 Route::get('/arial', function () {
     return view('arial'); // Asegúrate de tener pantalla1.blade.php
@@ -37,7 +39,7 @@ Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallb
 //})->name('login');
 
 //Rutas con controlador
-Route::get('/login', [NavigationController::class, 'login'])->name('login');
+//Route::get('/login', [NavigationController::class, 'login'])->name('login');
 Route::get('/administrador', [NavigationController::class, 'administrador'])->name('administrador');
 Route::get('/asistente', [NavigationController::class, 'asistente'])->name('asistente');
 Route::get('/formulario', [NavigationController::class, 'formulario'])->name('formulario');
